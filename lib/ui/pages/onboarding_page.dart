@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wanderind/shared/theme.dart';
+import 'package:wanderind/ui/widgets/button_big.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
@@ -43,27 +44,9 @@ class OnBoardingPage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 24.0),
-              child: ElevatedButton(
+              child: ButtonBig(
+                buttonText: 'Get Started',
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primaryColors[500],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(36.0), // Border radius
-                  ),
-                ),
-                child: Container(
-                  width: double.infinity,
-                  height: 56,
-                  child: Center(
-                    child: Text(
-                      'Get Started',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 20,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ),
           ],
