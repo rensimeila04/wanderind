@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wanderind/ui/pages/language_page.dart';
 import 'package:wanderind/ui/pages/onboarding_page.dart';
+import 'package:wanderind/ui/pages/register_page.dart';
 import 'package:wanderind/ui/pages/splash_page.dart';
 
 void main() {
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/on-boarding': (context) => OnBoardingPage(),
+        '/language': (context) => LanguagePage(),
+        '/register': (context) => RegisterPage(),
       },
     );
   }
