@@ -57,22 +57,22 @@ FontWeight bold = FontWeight.w700;
 FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
 
-TextStyle blackTextStyle = GoogleFonts.montserrat(
+TextStyle blackTextStyle = GoogleFonts.inter(
   color: AppColors.grayscaleColors[900],
 );
 
-TextStyle whiteTextStyle = GoogleFonts.montserrat(
+TextStyle whiteTextStyle = GoogleFonts.inter(
   color: AppColors.grayscaleColors[50],
 );
 
-TextStyle captionTextStyle = GoogleFonts.montserrat(
+TextStyle captionTextStyle = GoogleFonts.inter(
   color: AppColors.grayscaleColors[600],
 );
 
-TextStyle grayTextStyle = GoogleFonts.montserrat(
+TextStyle grayTextStyle = GoogleFonts.inter(
   color: AppColors.grayscaleColors[500],
 );
 
-TextStyle blueTextStyle = GoogleFonts.montserrat(
+TextStyle blueTextStyle = GoogleFonts.inter(
   color: AppColors.primaryColors[500],
 );
