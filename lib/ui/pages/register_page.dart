@@ -133,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, '/sign-in');
                         },
-                        child: Text('Sign In', style: blueTextStyle.copyWith(
+                        child: Text('Sign in', style: blueTextStyle.copyWith(
                           fontSize: 16,
                           fontWeight: semiBold
                         )),
