@@ -15,189 +15,196 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/icon_logo.png',
-              width: 126,
-              height: 118.85,
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              "Welcome Back!",
-              style: blackTextStyle.copyWith(fontSize: 18, fontWeight: medium),
-            ),
-            SizedBox(
-              height: 32,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 24),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 24),
+          child: Center(
+            child: SingleChildScrollView(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-                        hintText: "Email/Phone Number",
-                        hintStyle: grayTextStyle.copyWith(
-                            fontSize: 16, fontWeight: regular),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(36)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: const Color(0xFF1A80E4)),
-                            borderRadius: BorderRadius.circular(36))),
-                    style: blackTextStyle.copyWith(
-                        fontSize: 16, fontWeight: regular),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-                        hintText: "Password",
-                        hintStyle: grayTextStyle.copyWith(
-                            fontSize: 16, fontWeight: regular),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(36)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: const Color(0xFF1A80E4)),
-                            borderRadius: BorderRadius.circular(36))),
-                    style: blackTextStyle.copyWith(
-                        fontSize: 16, fontWeight: regular),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            side: MaterialStateBorderSide.resolveWith(
-                                (Set<MaterialState> states) {
-                              return const BorderSide(color: Color(0xFF79838C));
-                            }),
-                            value: rememberMe,
-                            activeColor: AppColors.primaryColors[500],
-                            onChanged: (newValue) {
-                              setState(() {
-                                rememberMe = newValue;
-                              });
-                            },
-                          ),
-                          Text(
-                            'Remember me',
-                            style: grayTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: bold,
-                            ),
-                          )
-                        ],
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text('Forget Password?',
-                            style: blueTextStyle.copyWith(
-                                fontSize: 16, fontWeight: bold)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  ButtonBig(
-                    buttonText: 'Login',
-                    onPressed: () {},
-                  ),
-                  SizedBox(
-                    height: 32,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Divider(),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Text(
-                        'Or',
-                        style: grayTextStyle.copyWith(
-                            fontSize: 16, fontWeight: regular),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Expanded(
-                        child: Divider(),
-                      )
-                    ],
+                  Image.asset(
+                    'assets/images/icon_logo.png',
+                    width: 126,
+                    height: 118.85,
                   ),
                   SizedBox(
                     height: 24,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Brand(
-                          Brands.facebook,
-                          size: 40,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Brand(
-                          Brands.google,
-                          size: 40,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          BoxIcons.bxl_apple,
-                          size: 40,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    "Welcome Back!",
+                    style: blackTextStyle.copyWith(fontSize: 18, fontWeight: medium),
                   ),
                   SizedBox(
-                    height: 16,
+                    height: 32,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don’t have an account?",
-                        style: captionTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: regular,
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+                              hintText: "Email/Phone Number",
+                              hintStyle: grayTextStyle.copyWith(
+                                  fontSize: 16, fontWeight: regular),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(36)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: const Color(0xFF1A80E4)),
+                                  borderRadius: BorderRadius.circular(36))),
+                          style: blackTextStyle.copyWith(
+                              fontSize: 16, fontWeight: regular),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        child: Text('Sign Up',
-                            style: blueTextStyle.copyWith(
-                                fontSize: 16, fontWeight: semiBold)),
-                      ),
-                    ],
-                  )
+                        SizedBox(
+                          height: 16,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+                              hintText: "Password",
+                              hintStyle: grayTextStyle.copyWith(
+                                  fontSize: 16, fontWeight: regular),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(36)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: const Color(0xFF1A80E4)),
+                                  borderRadius: BorderRadius.circular(36))),
+                          style: blackTextStyle.copyWith(
+                              fontSize: 16, fontWeight: regular),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Checkbox(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  side: MaterialStateBorderSide.resolveWith(
+                                      (Set<MaterialState> states) {
+                                    return const BorderSide(color: Color(0xFF79838C));
+                                  }),
+                                  value: rememberMe,
+                                  activeColor: AppColors.primaryColors[500],
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      rememberMe = newValue;
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  'Remember me',
+                                  style: grayTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: bold,
+                                  ),
+                                )
+                              ],
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text('Forget Password?',
+                                  style: blueTextStyle.copyWith(
+                                      fontSize: 16, fontWeight: bold)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        ButtonBig(
+                          buttonText: 'Login',
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          height: 32,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Divider(),
+                            ),
+                            SizedBox(
+                              width: 16,
+                            ),
+                            Text(
+                              'Or',
+                              style: grayTextStyle.copyWith(
+                                  fontSize: 16, fontWeight: regular),
+                            ),
+                            SizedBox(
+                              width: 16,
+                            ),
+                            Expanded(
+                              child: Divider(),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 24,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: Brand(
+                                Brands.facebook,
+                                size: 40,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Brand(
+                                Brands.google,
+                                size: 40,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                BoxIcons.bxl_apple,
+                                size: 40,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don’t have an account?",
+                              style: captionTextStyle.copyWith(
+                                fontSize: 16,
+                                fontWeight: regular,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/register');
+                              },
+                              child: Text('Sign Up',
+                                  style: blueTextStyle.copyWith(
+                                      fontSize: 16, fontWeight: semiBold)),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
