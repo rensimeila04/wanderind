@@ -40,8 +40,7 @@ class _DropdownCustomState extends State<DropdownCustom> {
                 },
                 items: <String>[
                   'Select Language',
-                  'English',
-                  'Bahasa Indonesia'
+                  'English'
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
