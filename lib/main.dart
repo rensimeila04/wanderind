@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wanderind/ui/pages/language_page.dart';
 import 'package:wanderind/ui/pages/onboarding_page.dart';
 import 'package:wanderind/ui/pages/register_page.dart';
+import 'package:wanderind/ui/pages/sign_in_page.dart';
 import 'package:wanderind/ui/pages/splash_page.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/on-boarding': (context) => OnBoardingPage(),
         '/language': (context) => LanguagePage(),
         '/register': (context) => RegisterPage(),
+        '/sign-in': (context) => SignInPage(),
       },
     );
   }
