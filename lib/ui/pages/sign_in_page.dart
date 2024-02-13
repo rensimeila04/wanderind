@@ -12,6 +12,8 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   bool? rememberMe = false;
+  bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,8 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   Text(
                     "Welcome Back!",
-                    style: blackTextStyle.copyWith(fontSize: 18, fontWeight: medium),
+                    style: blackTextStyle.copyWith(
+                        fontSize: 18, fontWeight: medium),
                   ),
                   SizedBox(
                     height: 32,
@@ -44,16 +47,16 @@ class _SignInPageState extends State<SignInPage> {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+                              contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 18),
                               hintText: "Email/Phone Number",
                               hintStyle: grayTextStyle.copyWith(
                                   fontSize: 16, fontWeight: regular),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(36)),
                               focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: const Color(0xFF1A80E4)),
+                                  borderSide: BorderSide(
+                                      color: const Color(0xFF1A80E4)),
                                   borderRadius: BorderRadius.circular(36))),
                           style: blackTextStyle.copyWith(
                               fontSize: 16, fontWeight: regular),
@@ -62,18 +65,37 @@ class _SignInPageState extends State<SignInPage> {
                           height: 16,
                         ),
                         TextFormField(
+                          obscureText: _obscureText,
                           decoration: InputDecoration(
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-                              hintText: "Password",
-                              hintStyle: grayTextStyle.copyWith(
-                                  fontSize: 16, fontWeight: regular),
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(36)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: const Color(0xFF1A80E4)),
-                                  borderRadius: BorderRadius.circular(36))),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 18),
+                            hintText: "Password",
+                            hintStyle: grayTextStyle.copyWith(
+                                fontSize: 16, fontWeight: regular),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(36)),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: const Color(0xFF1A80E4)),
+                              borderRadius: BorderRadius.circular(36),
+                            ),
+                            suffixIcon: Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: IconButton(
+                                icon: Icon(
+                                  _obscureText
+                                      ? Iconsax.eye_outline
+                                      : Iconsax.eye_slash_outline,
+                                  color: AppColors.grayscaleColors[500],
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _obscureText = !_obscureText;
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
                           style: blackTextStyle.copyWith(
                               fontSize: 16, fontWeight: regular),
                         ),
@@ -88,7 +110,8 @@ class _SignInPageState extends State<SignInPage> {
                                   ),
                                   side: MaterialStateBorderSide.resolveWith(
                                       (Set<MaterialState> states) {
-                                    return const BorderSide(color: Color(0xFF79838C));
+                                    return const BorderSide(
+                                        color: Color(0xFF79838C));
                                   }),
                                   value: rememberMe,
                                   activeColor: AppColors.primaryColors[500],
@@ -192,7 +215,7 @@ class _SignInPageState extends State<SignInPage> {
                               onPressed: () {
                                 Navigator.pushNamed(context, '/register');
                               },
-                              child: Text('Sign Up',
+                              child: Text('Sign up',
                                   style: blueTextStyle.copyWith(
                                       fontSize: 16, fontWeight: semiBold)),
                             ),
